@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: postgres-container
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: qwerty
+      #POSTGRES_DB: java_hibernate_service_db;
+    volumes:
+      #- ./docker_postgres_init.sql:/docker-entrypoint-initdb.d/init_script.sql
+      - ./sql/:/docker-entrypoint-initdb.d/
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - java-microservices-net
+
+volumes:
+  postgres_data:
+
+networks:
+  java-microservices-net:
+    driver: bridge

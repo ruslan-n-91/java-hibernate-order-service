@@ -1,0 +1,1 @@
+CREATE DATABASE java_hibernate_service_db;
