@@ -33,7 +33,7 @@ public class Order {
     )
     @SequenceGenerator(
             name = "order_seq_generator",
-            sequenceName = "new_orders_id_seq",
+            sequenceName = "hibernate_orders_id_seq",
             allocationSize = 1
     )
     @Column(name = "id")
